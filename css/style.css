@@ -277,7 +277,7 @@ header label
     left:0;
 }
 #click:checked ~ label i::before{
-    content:"\f00d"
+    content:"\f009"
 }
 
 /* #click:not(:checked) ~ ul.mobile
@@ -336,6 +336,9 @@ header {
    
     width:100vw;
 }
-
+header label
+{
+    display: none;
+}
 
 }
