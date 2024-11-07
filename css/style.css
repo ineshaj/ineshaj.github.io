@@ -114,11 +114,11 @@ nav ul {
     padding-left: 0;
  
 }
-nav{
+/* nav{
     display: flex;
     justify-content: center;
 }
-
+ */
 .flex {
     display: flex;
 }
@@ -319,8 +319,7 @@ footer p{
     text-align: left;
 }
 nav{
-    display: block;
- 
+    display: block; 
 }
 .mobile
 {
