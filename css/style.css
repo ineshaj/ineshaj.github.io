@@ -59,6 +59,8 @@ body {
 header {
     background-color: #333;
     padding: 1.5rem 0;
+    position:fixed;
+    width:100vw;
 }
 .logo
 {
@@ -130,6 +132,11 @@ main {
     width: 100%;
     padding: 2.5rem 0 4rem 0;
 }
+#main-content
+{
+    padding-top:5.1rem;
+}
+
 
 article {
     margin-bottom: 2.5rem;
@@ -225,6 +232,58 @@ footer a {
 footer p{
     text-align: center;
 }
+.mobile
+{
+    display: block;
+}
+.desktop
+{
+    display: none;
+}
+ul.mobile{
+    list-style-type: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-left: 0;
+    position: fixed;
+    top:125px;
+    height: 100vh;/*le menu occupe tout l'ecran mobile*/
+    width: 100vw;
+    background-color: #666;
+    left:-100%;
+    transition:all 0.3s ease-in-out;
+}
+ul.mobile a{
+    color: white;
+    text-decoration: none ;
+
+}
+
+header input{
+    display: none;
+}
+#main-header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header label 
+{
+    color:white;
+    font-size: 1.5rem;
+}
+#click:checked ~ ul.mobile{
+    left:0;
+}
+#click:checked ~ label i::before{
+    content:"\f00d"
+}
+
+/* #click:not(:checked) ~ ul.mobile
+{
+    left:-100%;
+} */
 @media screen and (min-width:1000px)/*conditionnel pour la version desktop*/
 {
 
@@ -263,4 +322,20 @@ nav{
     display: block;
  
 }
+.mobile
+{
+    display: none;
+}
+.desktop
+{
+    display: block;
+}
+header {
+    background-color: #333;
+    padding: 1.5rem 0;
+   
+    width:100vw;
+}
+
+
 }
