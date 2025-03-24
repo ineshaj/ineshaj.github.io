@@ -1,6 +1,3 @@
-import data from '.js/data.js';
-
-console.log(data);
 const productContainer = document.getElementById("products");//c'est le row
 //const cartContainer = document.getElementById("cart");//le panier
 const totalContainer = document.getElementById("total");// prix total
@@ -16,7 +13,7 @@ let listProductHTML = document.querySelector('.listeprduits');//liste des produi
 let iconCartSpan = document.querySelector('.icon-cart span');//icone du nombre d'article en panier
 let body = document.querySelector('body');
 
-fetch(data)
+fetch("../produits.json")
 .then(response => response.json())// convertit la reponse en json
 .then( products => {
         products.forEach(product =>
