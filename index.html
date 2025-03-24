@@ -1,130 +1,648 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Poppins:wght@400;700&display=swap"
-		rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link rel="stylesheet" href="css/style.css">
-		<title>Responsive</title>
-	</head>
-	<body>
-		
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Happyness chez Ines</title>
+    <!-- typographie -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-		<header id="main-header">
-				<div class="container">
-					<div class="logo"><a href="#" title="Retour a la page d'accueil"><img src="img/logo.png" alt=""></a></div>
-					<!-- un bouton sur lequel on clique et le menu se deroule -->
-					<input type="checkbox" name="" id="click">
-					<label for="click"><!-- icone du menu -->
-						<i class="fas fa-bars"></i>
-					</label>
-										<!-- nouveau menu pour le reponsive -->
-					<ul class="mobile">
-						<li><a href="#">Link1</a></li>
-						<li><a href="#">Link2</a></li>
-						<li><a href="#">Link3</a></li>
-						<li><a href="#">Link4</a></li>
-						<li><a href="#">Link5</a></li>
-					</ul>
-				</div>
-		</header>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" /> -->
+    <!--  cdn font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet" >
+  </head>
+  <body>
+    <header>
+      <!-- header bar avec le nav bar et logo -->
+      <nav class="navbar navbar-expand-lg fixed-top bg-white"> 
+         <!--  pour ouvrir le bouton qui est deja mis responsive -->
+          <div class="container">
+              <a class="navbar-brand" href="#"><img class="logo" src="img/logo.svg" alt="Logo"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav ms-auto">
+                      <li class="nav-item"><a class="nav-link text-uppercase active" href="#">HOME</a></li>
+                      <li class="nav-item"><a class="nav-link text-uppercase" href="#produits">shop</a></li>
+                      <li class="nav-item"><a class="nav-link text-uppercase" href="#a-venir">Nouveautés</a></li>
+                      <li class="nav-item"><a class="nav-link text-uppercase " data-bs-toggle="modal" data-bs-target="#contactModal" href="#">contact</a></li>
+                      <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="#">
+                          <div class="icon-cart " data-bs-toggle="modal" data-bs-target="#cartModal">
+                              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
+                              </svg>
+                              <span>0</span>
+                            </div>
+                        </a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+      <div class="hero">
+       
+        <div id="hero-carousel" class="carousel slide my-5" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          </div>
+      
+          <div class="carousel-inner">
+            <div class="carousel-item active c-item">
+              <img src="img/slide1.webp" class="d-block w-100 c-img" alt="Slide 1">
+              <div class="carousel-caption py-s-3  py-m-2 d-flex flex-column align-items-center justify-content-center h-100 mt-4">
+                <p class="mt-5 fs-3 text-uppercase">Notre but votre satisfaction</p>
+                <h1 class="display-1 fw-bolder text-capitalize">L'art de la gourmandise à portée de clic !</h1>
+                <a href="#produits" class="btn btn-primary  fs-5 mt-5">Déguster</a>
+              </div>
+            </div>
+            <div class="carousel-item c-item">
+              <img src="img/slide2.webp" class="d-block w-100 c-img" alt="Slide 2">
+              <div class="carousel-caption py-s-3  py-m-2 d-flex flex-column align-items-center justify-content-center h-100 mt-4">
+                <p class="text-uppercase fs-3 mt-5">Notre but votre satisfaction</p>
+                <p class="display-1 fw-bolder text-capitalize">Des douceurs faites avec amour, juste pour vous.</p>
+                <a href="#produits" class="btn btn-primary  fs-5 mt-5"> Déguster</a>
+              </div>
+            </div>
+            <div class="carousel-item c-item">
+              <img src="img/slide3.webp" class="d-block w-100 c-img" alt="Slide 3">
+              <div class="carousel-caption py-s-3  py-m-2 d-flex flex-column align-items-center justify-content-center h-100  mt-4">
+                <p class="text-uppercase fs-3 mt-5">Notre but votre satisfaction</p>
+                <p class="display-1 fw-bolder text-capitalize">Un instant sucré, un plaisir infini</p>
+                <a href="#produits" class="btn btn-primary  fs-5 mt-5"> Déguster</a>
+              </div>
+            </div>
+              <div class="carousel-item c-item">
+                <img src="img/slide4.webp" class="d-block w-100 c-img" alt="Slide 4">
+                <div class="carousel-caption py-s-3  py-m-2 d-flex flex-column align-items-center justify-content-center h-100 mt-4">
+                  <p class="text-uppercase fs-3 mt-5">Notre but votre satisfaction</p>
+                  <p class="display-1 fw-bolder text-capitalize">Savourez l’excellence, commandez la perfection</p>
+                  <a href="#produits" class="btn btn-primary  fs-5 mt-5"> Déguster</a>
+                </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+      </div>
+  </header>
 
-		<nav id="main-menu" class="desktop">
-
-			<div class="container">
-				<ul class="flex">
-					<li><a href="#">Link1</a></li>
-					<li><a href="#">Link2</a></li>
-					<li><a href="#">Link3</a></li>
-					<li><a href="#">Link4</a></li>
-					<li><a href="#">Link5</a></li>
-				</ul>
-			</div> <!-- .container -->
-		</nav>
-
-
-
-		<div id="main-content">
+<div class="container">
+    <div class="categories d-flex justify-content-center align-items-center ">
+      <button data-filter="all" class="btn  text-uppercase me-2 ">Tout</button>
+      <button data-filter="tunisien" class="btn  text-uppercase  me-2">tunisien</button>
+      <button data-filter="occidental" class="btn  text-uppercase border-0">occidental</button>    
+      </div>
+    <!--   grille de produits -->
+    <div class="listeprduits text-center pt-3" id="produits">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 pt-3" id="products" >     
+      </div>
+    </div>
+    
+  </div>
 
 
-			<div class="container flex">
+ <div class="a-venir py-5" id="a-venir">
+  <h2 class="py-2 text-center text-secondary">Le meilleur est à venir</h2>
 
-				<main> 
+  <div class="contenant">
 
-					<article class="flex">
-						
-						<img class="image" src="img/image.png" alt="">
-						
-						
-						<div class="content">
-							<h2>This is a Lorem Ipsum  Heading</h2>
-							<p>Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. </p>
-							<p><a href="#">Read More</a></p>
-						</div>
+    <div class="carousel-essai">
+      <div class="image-container">
+        <img src="img/soon1.jpg" alt="">
+        <img src="img/soon2.jpg" alt="">
+        <img src="img/soon3.jpg" alt="">
+        <img src="img/soon4.jpg" alt="">
+        <img src="img/soon5.jpg" alt="">
+        <img src="img/soon6.jpg" alt="">
+        <img src="img/soon7.jpg" alt="">
+        <img src="img/soon8.jpg" alt="">
+      </div>
+   </div>
 
-					</article>
-					<article class="flex">
-						
-						<img class="image" src="img/image.png" alt="">
-						
-						
-						<div class="content">
-							<h2>This is a Lorem Ipsum  Heading</h2>
-							<p>Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. </p>
-							<p><a href="#">Read More</a></p>
-						</div>
+</div>
+ </div>
 
-					</article>
-.
-					<article class="flex">
-						
-						<img class="image" src="img/image.png" alt="">
-						
-						
-						<div class="content">
-							<h2>This is a Lorem Ipsum  Heading</h2>
-							<p>Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. </p>
-							<p><a href="#">Read More</a></p>
-						</div>
+<!-- testimonial -->
+ <!-- Carousel wrapper -->
+<div id="carouselMultiItemExample"  class="carousel slide carousel-dark text-center py-4 my-3 " data-bs-ride="carousel">
+  <!-- Controls -->
+  <div class="d-flex justify-content-center mb-4">
+    <button data-mdb-button-init class="carousel-control-prev position-relative" type="button"
+      data-bs-target="#carouselMultiItemExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon text-body" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button data-mdb-button-init class="carousel-control-next position-relative" type="button"
+      data-bs-target="#carouselMultiItemExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon text-body" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- Inner -->
+  <div class="carousel-inner py-4">
+  <!-- Single item -->
+  <div class="carousel-item active">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="rounded-circle shadow-1-strong mb-4"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">Anna Deynah</h5>
+            <p>Femme au foyer</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              J’ai goûté les makrouds et les baklawas, et je dois dire que je suis bluffé(e). Croustillants, fondants et délicatement sucrés… C’est du pur bonheur ! On sent l’amour et le savoir-faire artisanal dans chaque pièce.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+            </ul>
+          </div>
 
-					</article>
+          <div class="col-lg-4 d-none d-lg-block">
+            <img class="rounded-circle shadow-1-strong mb-4"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">John Doe</h5>
+            <p>Etudiant</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              Difficile de trouver des pâtisseries aussi authentiques ! Les cornes de gazelle sont incroyablement fondantes et les samsas croquantes à souhait. Un grand merci pour ces merveilles qui rappellent les saveurs de mon enfance.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li>
+                <i class="fas fa-star-half-alt fa-sm"></i>
+              </li>
+            </ul>
+          </div>
 
-				</main>
+          <div class="col-lg-4 d-none d-lg-block">
+            <img class="rounded-circle shadow-1-strong mb-4"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">Maria Kate</h5>
+            <p>Photographer</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              Que ce soit pour un thé entre amis ou une occasion spéciale, ces douceurs tunisiennes sont toujours un succès ! Une mention spéciale pour les kaak warka, un pur délice ! Bravo pour cette qualité exceptionnelle.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="far fa-star fa-sm"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> 
 
-				
-				
-				<aside>
-					<nav id="nav-content">
-						<h3>Sidebar Links</h3>
-						
-							<ul>
-								<li><a href="#">Link1</a></li>
-								<li><a href="#">Link2</a></li>
-								<li><a href="#">Link3</a></li>
-								<li><a href="#">Link4</a></li>
-							</ul> 
-					</nav>	
-					
-						<h3>Other Widgets</h3>
-						<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. </p>
-						<p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. </p>
-					
-				</aside>
-			</div> <!-- .container flex -->
+    <!-- Single item -->
+    <div class="carousel-item ">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="rounded-circle shadow-1-strong mb-4"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(3).webp" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">John Doe</h5>
+            <p>UX Designer</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              On sent la qualité des ingrédients : des amandes généreuses, du miel pur et des épices qui rappellent les saveurs envoûtantes de la Tunisie. C’est une véritable invitation au voyage, idéale pour les amateurs de douceurs orientales.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+            </ul>
+          </div>
 
-				
-		</div> <!-- #main-content -->		
+          <div class="col-lg-4 d-none d-lg-block">
+            <img class="rounded-circle shadow-1-strong mb-4"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">Alex Rey</h5>
+            <p>Web Developer</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              J’ai eu l’occasion de tester ces produits de pâtisserie, et je dois dire que je suis absolument conquis(e) ! La qualité des ingrédients est exceptionnelle, ce qui se ressent dans chaque bouchée. Les saveurs sont authentiques, les textures parfaitement équilibrées, et chaque produit est un régal pour les papilles.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li>
+                <i class="fas fa-star-half-alt fa-sm"></i>
+              </li>
+            </ul>
+          </div>
 
-		<footer class="footer">
-			<div class="container">
-				<p>Copyright <a href="#">YourSite</a>. All rights reserved.</p>
-			</div>
-		</footer>	
-		
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		</body>
-	</html>
+          <div class="col-lg-4 d-none d-lg-block">
+            <img class="rounded-circle shadow-1-strong mb-4"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(5).webp" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">Maria Kate</h5>
+            <p>Lawyer</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              Que ce soit les gâteaux moelleux, les viennoiseries croustillantes ou les macarons raffinés, tout est préparé avec soin et passion. En plus, la présentation est impeccable, idéale pour offrir ou simplement se faire plaisir.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="far fa-star fa-sm"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Single item -->
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="rounded-circle shadow-1-strong mb-4"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(6).webp" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">Anna Deynah</h5>
+            <p>UX Designer</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              Je suis absolument ravi(e) d’avoir découvert ces produits de pâtisserie. Chaque bouchée est un pur bonheur ! Les ingrédients sont de qualité, les saveurs sont parfaitement dosées et les textures irrésistibles.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 d-none d-lg-block">
+            <img class="rounded-circle shadow-1-strong mb-4"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(8).webp" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">John Doe</h5>
+            <p>Web Developer</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              J’ai eu la chance de goûter à ces pâtisseries tunisiennes, et je suis totalement conquis(e) ! Chaque bouchée est un mélange parfait de saveurs authentiques et de savoir-faire traditionnel. Les makrouds fondent en bouche avec leur délicieux miel parfumé, les baklawas sont croustillants et subtilement sucrés, et les cornes de gazelle sont un pur régal.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li>
+                <i class="fas fa-star-half-alt fa-sm"></i>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 d-none d-lg-block">
+            <img class="rounded-circle shadow-1-strong mb-4"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(7).webp" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">Maria Kate</h5>
+            <p>Photographer</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              Les saveurs des pâtisseries tunisiennes sont tout simplement exquises ! Chaque bouchée me transporte directement en Tunisie avec ses parfums de miel, d’amandes et de fleur d’oranger. Un vrai régal pour les papilles !
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="far fa-star fa-sm"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Inner -->
+</div>
+<!-- Carousel wrapper -->
+
+<!-- footer -->
+<footer id="footer" class="mt-5">
+ <div class="container">
+  <div class="row d-flex flex-wrap justify-content-between align-items-center">
+    <div class="col-md-3 col-sm-6">
+      <div class="footer-menu footer-menu-001">
+        <div class="footer-intro mb-4">
+          <a href="index.html">
+            <img src="img/logo.svg" class="logo" alt="logo">
+          </a>
+        </div>
+        <p class="text-justify"><strong>H Chez Ines</strong> est une pâtisserie haut de gamme qui marie l’authenticité des recettes traditionnelles avec l’audace de la pâtisserie contemporaine. Ici, les douceurs du passé se réinventent avec des techniques modernes et des saveurs innovantes.</p>
+        <div class="social-links">
+          <ul class="list-unstyled d-flex flex-wrap">
+            <li>
+              <a href="#" class="text-secondary">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-secondary">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <use xlink:href="#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-secondary">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <use xlink:href="#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-secondary">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <use xlink:href="#pinterest"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-secondary">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <use xlink:href="#instagram"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 ps-2">
+      <div class="footer-menu footer-menu-002">
+        <h5 class="widget-title text-uppercase">Quick Links</h5>
+        <ul class="menu-list list-unstyled text-uppercase border-animation-left fs-6">
+          <li><a class="nav-link text-uppercase active" href="#">HOME</a></li>
+          <li ><a class="nav-link text-uppercase" href="#produits">shop</a></li>
+          <li><a class="nav-link text-uppercase" href="#a-venir">coming soon</a></li>
+          <li><a class="nav-link text-uppercase " data-bs-toggle="modal" data-bs-target="#contactModal" href="#">contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="footer-menu footer-menu-003">
+        <h5 class="widget-title text-uppercase ">Help &amp; Info</h5>
+        <ul class="menu-list list-unstyled text-uppercase border-animation-left fs-6">
+          <li class="menu-item">
+            <a href="#" class="item-anchor">Track Your Order</a>
+          </li>
+          <li class="menu-item">
+            <a href="#" class="item-anchor">Returns + Exchanges</a>
+          </li>
+          <li class="menu-item">
+            <a href="#" class="item-anchor">Shipping + Delivery</a>
+          </li>
+          <li class="menu-item">
+            <a href="#" class="item-anchor" data-bs-toggle="modal" data-bs-target="#mentionsLegalesModal">Mention légales</a>
+          </li>
+          <li class="menu-item">
+            <a href="#" class="item-anchor">Find us easy</a>
+          </li>
+          <li class="menu-item">
+            <a href="index.html" class="item-anchor">Faqs</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="footer-menu footer-menu-004 border-animation-left">
+        <h5 class="widget-title text-uppercase ">Contact Us</h5>
+        <p>Do you have any questions or suggestions? <a href="mailto:contact@HchezInes.com" class="item-anchor">contact@HChezInes.com</a></p>
+        <p>Do you need support? </p><p>Give us a call. <a href="tel:+18197201152" class="item-anchor">+1 819 720 1152
+        </a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="border-top py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 d-flex flex-wrap">
+        <div class="shipping me-1">
+          <span>We ship with:</span>
+          <img src="img/arct-icon.png" class="img-fluid" alt="icon">
+          <img src="img/dhl-logo.png" class="img-fluid" alt="icon">
+        </div>
+        <div class="payment-option">
+          <span>Payment Option:</span>
+          <img src="img/visa-card.png" class="img-fluid" alt="card">
+          <img src="img/paypal-card.png" class="img-fluid" alt="card">
+          <img src="img/master-card.png" class="img-fluid"  alt="card">
+        </div>
+      </div>
+      <div class="col-md-6 text-end">
+        <p>© Copyright 2025 Chez Ines. All rights reserved</p>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
+
+ 
+<!-- Modal  pour le panier-->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Votre panier</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul id="cart" class="listCart">           
+        </ul>
+        <p class="mt-3"> <strong>Total:</strong> <span id="total">0</span>$</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary" id="clear-cart">Vider le panier</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal  pour les détails-->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modal-title"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center" id="modal-body">
+       
+
+      </div>
+      <div class="modal-footer mx-auto">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal  pour le formulaire de contact-->
+<div class="modal fade" id="contactModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary">Welcome Back!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form action="#" method="post" id="signupForm" novalidate>
+          <div class="card border-primary rounded-0">
+              <div class="card-header p-0">
+                  <div class="bg-primary text-white text-center py-2">
+                      <h3><i class="fa fa-envelope"></i> Contactez nous</h3>
+                      <p class="m-0">Comment peut-on vous aider ?</p>
+                  </div>
+              </div>
+              <div class="card-body p-3">
+                  <!--Body-->
+                  <div class="form-group">
+                      <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="fa fa-user text-info"></i></div>
+                          </div>
+                          <input type="text" class="form-control" id="nom" name="nom" placeholder="Votre Nom" required>
+                          <div class="invalid-feedback"></div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="fa fa-envelope text-info"></i></div>
+                          </div>
+                          <input type="email" class="form-control" id="email" name="email" placeholder="hchezines@gmail.com" required>
+                          <div class="invalid-feedback"></div>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="fa fa-comment text-info"></i></div>
+                          </div>
+                          <textarea class="form-control" placeholder="Ecrivez votre message"  id="msg" required></textarea>
+                          <div class="invalid-feedback"></div>
+                      </div>
+                  </div>
+
+                  <div class="text-center">
+                      <input type="submit" value="Envoyer" class="btn btn-primary py-1">
+                  </div>
+                 
+              </div>
+
+          </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal mentions légales -->
+<div class="modal fade" id="mentionsLegalesModal" tabindex="-1" aria-labelledby="mentionsLegalesLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="mentionsLegalesLabel" >Mentions Légales</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+          </div>
+          <div class="modal-body">
+              <h6>1. Éditeur du site</h6>
+              <p>Nom de l'entreprise : <strong>Happynes chez Ines</strong></p>
+              <p>Adresse : <strong>123 Rue de l'E-commerce, 75000 Gatineau, Québec</strong></p>
+              <p>Email : <strong>contact@votresite.com</strong></p>
+              <p>Téléphone : <strong>+1 819 720 1152 </strong></p>
+
+              <h6>2. Hébergement</h6>
+              <p>Hébergeur : <strong> Hostinger</strong></p>
+              <p>Adresse :</p>                  
+                      <ul> 
+                        <li class="fw-bold">
+                          Adresse : Jonavos g. 60C, 44192 Kaunas, Lituanie
+                        </li>
+                        <li class="fw-bold">
+                          Site : https://www.hostinger.fr
+                        </li>
+                      </ul>
+                 
+            
+              <p>Téléphone : <strong>+1 819 720 1152 </strong></p>
+
+              <h6>3. Propriété intellectuelle</h6>
+              <p>Le contenu du site (textes, images, logo, etc.) est protégé par le droit d’auteur. Toute reproduction est interdite sans autorisation.</p>
+
+              <h6>4. Collecte des données personnelles</h6>
+              <p>Les informations recueillies sont destinées à améliorer l'expérience utilisateur et ne sont en aucun cas revendues à des tiers.</p>
+
+              <h6>5. Cookies</h6>
+              <p>Le site utilise des cookies pour améliorer la navigation. Vous pouvez paramétrer leur utilisation dans votre navigateur.</p>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Fleche vers le haut -->
+<div class="backUp">
+  <i class="fa-solid fa-arrow-up"></i>
+<!-- ▲ -->
+</div>
+
+    <script type="module"  src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+   </body>
+</html>

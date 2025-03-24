@@ -1,0 +1,43 @@
+$primary: #C7A383;    
+$secondary: #A02F66;   
+$color1:#EDA1A3;
+$color2:#232323;
+
+
+$body-color:$color2;
+$font-family-base:"Merriweather", serif;
+$font-size-base: 1rem;
+$line-height-base: 1.5;
+$h1-font-size: 9rem;
+$h2-font-size: 3.5rem;
+$h3-font-size: 1.5rem;
+
+$input-focus-box-shadow:none;
+$navbar-nav-link-padding-x:1.5rem;
+$navbar-light-hover-color:$secondary;
+
+$spacer: 1rem;  // Espacement de base
+$spacers: (
+  0: 0,
+  1: $spacer * 0.5,
+  9: $spacer *2.5,
+  2: $spacer* 2,
+  3: $spacer * 3,
+  4: $spacer * 4,
+  5: $spacer * 5,
+  6: $spacer * 6,
+  7: $spacer * 7,
+  8: $spacer * 8
+);
+
+$btn-border-radius: 50px; // Boutons arrondis
+$btn-padding-y: 0.6rem;
+$btn-padding-x: 1.3rem;
+$btn-font-weight: bold;
+
+$navbar-padding-y: 1rem;
+$navbar-dark-color: white;
+$navbar-dark-hover-color: $secondary;
+
+$carousel-transition-duration:       .5s
+
