@@ -278,7 +278,6 @@ function clearCart()
 
  function showProductModal(id,nom,prix,img,description)
 {
-    const modalFooter = document.getElementById('modal-footer');
     const modalTitle = document.getElementById('modal-title');
     const bouton = document.getElementById('add');
     modalTitle.textContent = nom;
