@@ -296,7 +296,7 @@ function clearCart()
     bouton.setAttribute('data-img',img);
     bouton.setAttribute('data-description',description);
     bouton.setAttribute('data-categorie',categorie);  
-    bouton.textContent = 'Ajouter au Panier' ;      
+    
 }  
 
 
