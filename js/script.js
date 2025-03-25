@@ -278,6 +278,7 @@ function clearCart()
 
  function showProductModal(id,nom,prix,img,description)
 {
+    const modalFooter = document.getElementById('modal-footer');
     const modalTitle = document.getElementById('modal-title');
     modalTitle.textContent = nom;
     modalTitle.style.fontWeight="bold";
@@ -288,6 +289,15 @@ function clearCart()
                             `;
     /* const myModal = new bootstrap.Modal(document.getElementById('productModal'));
     myModal.show(); */
+    const bouton = document.createElement('button');
+    bouton.classList.add('btn', 'btn-primary', 'add-to-cart', 'ms-1');
+    bouton.setAttribute('data-id',`${product.id}`);
+    bouton.setAttribute('data-nom',`${product.nom}`);
+    bouton.setAttribute('data-prix',`${product.prix}`);
+    bouton.setAttribute('data-img',`${product.img}}`);
+    bouton.setAttribute('data-description',`${product.description}}`);
+    bouton.setAttribute('data-categorie',`${product.categorie}}`);           
+    modalFooter.appendChild(bouton);
 }  
 
 
