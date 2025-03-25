@@ -190,16 +190,6 @@ const changeQuantityCart = (product_id, type) => {
 }
 
 
-document.querySelector('#clear-cart').addEventListener('click',()=>{
-    
-    if(confirm("Voulez vous vraiment vider votre panier?"))
-        {
-            clearCart();
-        }
-
-})
-
-
 
 //affichage par categorie
 const buttons = document.querySelectorAll('.categories button');
@@ -251,12 +241,7 @@ clearCartButton.style.display="block";
         clearCartButton.style.display = "none";
     }
 }
-function clearCart()
-{
-    cart=[];
-    addCartToMemory();
-    updateCart();
-}
+
 clearCartButton.addEventListener("click",()=>{
     if(confirm("Voulez vous vraiment vider votre panier?"))
     {
