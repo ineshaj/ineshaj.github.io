@@ -280,6 +280,7 @@ function clearCart()
 {
     const modalFooter = document.getElementById('modal-footer');
     const modalTitle = document.getElementById('modal-title');
+    const bouton = document.getElementById('add');
     modalTitle.textContent = nom;
     modalTitle.style.fontWeight="bold";
     const modalBody = document.getElementById('modal-body');
@@ -289,15 +290,13 @@ function clearCart()
                             `;
     /* const myModal = new bootstrap.Modal(document.getElementById('productModal'));
     myModal.show(); */
-    const bouton = document.createElement('button');
-    bouton.classList.add('btn', 'btn-primary', 'add-to-cart', 'ms-1');
-    bouton.setAttribute('data-id',`${product.id}`);
-    bouton.setAttribute('data-nom',`${product.nom}`);
-    bouton.setAttribute('data-prix',`${product.prix}`);
-    bouton.setAttribute('data-img',`${product.img}}`);
-    bouton.setAttribute('data-description',`${product.description}}`);
-    bouton.setAttribute('data-categorie',`${product.categorie}}`);           
-    modalFooter.appendChild(bouton);
+    bouton.setAttribute('data-id',id);
+    bouton.setAttribute('data-nom',nom);
+    bouton.setAttribute('data-prix',prix);
+    bouton.setAttribute('data-img',img);
+    bouton.setAttribute('data-description',description);
+    bouton.setAttribute('data-categorie',categorie);  
+    bouton.textContent = 'Ajouter au Panier' ;      
 }  
 
 
